@@ -1,0 +1,42 @@
+> GET http://127.0.0.1:8086/index.shtml
+< 200 text/html; charset=UTF-8
+< Set-Cookie: visitor=old; Max-Age=31536000; Path=/
+
+> GET http://127.0.0.1:8086/index.shtml
+< 200 text/html; charset=UTF-8
+< Set-Cookie: visitor=old; Max-Age=31536000; Path=/
+
+> GET http://127.0.0.1:8086/register.html
+< 200 text/html; charset=UTF-8
+
+> GET http://127.0.0.1:8086/level.shtml?level=expert
+< 200 text/html; charset=UTF-8
+< Set-Cookie: level=expert; Max-Age=31536000; Path=/
+
+> GET http://127.0.0.1:8086/level.shtml
+< 200 text/html; charset=UTF-8
+
+> GET http://127.0.0.1:8086/register.html
+< 200 text/html; charset=UTF-8
+
+> GET http://127.0.0.1:8086/level.shtml?level=novice
+< 200 text/html; charset=UTF-8
+< Set-Cookie: level=novice; Max-Age=31536000; Path=/
+
+> GET http://127.0.0.1:8086/level.shtml
+< 200 text/html; charset=UTF-8
+
+> GET http://127.0.0.1:8086/reset.html
+< 200 text/html; charset=UTF-8
+
+> GET http://127.0.0.1:8086/reset.shtml?
+< 200 text/html; charset=UTF-8
+< Set-Cookie: visitor=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/
+< Set-Cookie: level=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/
+
+> GET http://127.0.0.1:8086/index.shtml
+< 200 text/html; charset=UTF-8
+< Set-Cookie: visitor=old; Max-Age=31536000; Path=/
+
+> GET http://127.0.0.1:8086/level.shtml
+< 200 text/html; charset=UTF-8

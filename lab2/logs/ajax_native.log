@@ -1,0 +1,22 @@
+> POST http://127.0.0.1:8081/like.php
+> body: news_id=4&action=like
+< 200 application/json; charset=utf-8
+< {"ok":true,"news_id":4,"likes":1,"liked":true}
+
+> POST http://127.0.0.1:8081/like.php
+> body: news_id=2&action=like
+< 200 application/json; charset=utf-8
+< {"ok":true,"news_id":2,"likes":1,"liked":true}
+
+> GET http://127.0.0.1:8081/news.php
+< 200 application/json; charset=utf-8
+< {"ok":true,"news":[{"id":4,"likes":2,"liked":true},{"id":3,"likes":0,"liked":false},{"id":2,"likes":1,"liked":true},{"id":1,"likes":0,"liked":false}]}
+
+> POST http://127.0.0.1:8081/like.php
+> body: news_id=2&action=unlike
+< 200 application/json; charset=utf-8
+< {"ok":true,"news_id":2,"likes":0,"liked":false}
+
+> GET http://127.0.0.1:8081/news.php
+< 200 application/json; charset=utf-8
+< {"ok":true,"news":[{"id":4,"likes":2,"liked":true},{"id":3,"likes":0,"liked":false},{"id":2,"likes":0,"liked":false},{"id":1,"likes":0,"liked":false}]}

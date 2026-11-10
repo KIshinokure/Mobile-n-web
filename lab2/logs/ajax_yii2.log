@@ -1,0 +1,3 @@
+> POST http://127.0.0.1:8083/news/1/like
+< 200 application/json; charset=UTF-8
+< {"ok":true,"news_id":1,"likes":1,"liked":true}

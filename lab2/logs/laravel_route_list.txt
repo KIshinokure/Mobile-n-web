@@ -1,0 +1,19 @@
+$ php artisan --version
+Laravel Framework 13.40.0
+
+$ php artisan route:list
+
+  ANY       / ................................................................................................. home › Illuminate\Routing › RedirectController
+  GET|HEAD  about ............................................................................................................... about › PageController@about
+  GET|HEAD  news ........................................................................................................... news.index › NewsController@index
+  GET|HEAD  news/{news} ...................................................................................................... news.show › NewsController@show
+  POST      news/{news}/like ................................................................................................. news.like › NewsController@like
+  DELETE    news/{news}/like ............................................................................................. news.unlike › NewsController@unlike
+  GET|HEAD  news/{news}/likes .............................................................................................. news.likes › NewsController@likes
+  GET|HEAD  storage/{path} .............................. storage.local › vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php:111
+  PUT       storage/{path} ....................... storage.local.upload › vendor/laravel/framework/src/Illuminate/Filesystem/FilesystemServiceProvider.php:119
+  GET|HEAD  up ........................................................................................................... Illuminate\Foundation › HealthCheck
+  GET|HEAD  {fallbackPlaceholder} .................................................................................................... PageController@notFound
+
+                                                                                                                                           Showing [11] routes
+

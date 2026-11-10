@@ -1,0 +1,22 @@
+[
+  {
+    "name": "visitor",
+    "value": "old",
+    "domain": "127.0.0.1",
+    "path": "/",
+    "expires": 1825863133.541057,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "level",
+    "value": "novice",
+    "domain": "127.0.0.1",
+    "path": "/",
+    "expires": 1825863133.963893,
+    "httpOnly": false,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]

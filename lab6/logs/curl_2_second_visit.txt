@@ -1,0 +1,47 @@
+$ curl -i -H "Cookie: visitor=old" http://localhost:8086/index.shtml
+HTTP/1.1 200 OK
+Date: Tue, 10 Nov 2026 16:11:59 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Set-Cookie: visitor=old; Max-Age=31536000; Path=/
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- Задание 1. При первом открывании страница посылает клиенту cookie visitor=old -->
+<META HTTP-EQUIV="Set-Cookie" CONTENT="visitor=old; EXPIRES=Fri, 31-Dec-2027 23:59:59 GMT; PATH=/">
+<title>ЛР 6 · Задание 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- #set: создаёт SSI-переменную STUDENT с ФИО студента -->
+
+<!-- #config timefmt: задаёт формат вывода дат для директивы echo -->
+
+
+<div class="card">
+  <h1>Сайт студента Дикарев Артемий</h1>
+  <!-- #echo var="DATE_LOCAL": выводит текущие дату и время сервера -->
+  <p class="muted">Время сервера: 10.11.2026 19:11:59</p>
+
+  <!-- #if: проверяет, пришёл ли от браузера cookie visitor=old (переменная HTTP_COOKIE) -->
+  
+    <!-- ветка выполняется, если cookie найден: посетитель уже был на сайте -->
+    <h2 class="ok">Вы снова зашли на сайт студента «Дикарев Артемий»</h2>
+  
+  <!-- #endif: конец условного блока -->
+
+  <!-- #echo var="HTTP_COOKIE": показывает все cookie, которые браузер прислал серверу -->
+  <p>Cookie в запросе: <code>visitor=old</code></p>
+</div>
+
+<div class="card">
+  <a href="register.html">Задание 2 — регистрация уровня пользователя</a> ·
+  <a href="reset.html">Задание 3 — обнулить cookies</a>
+</div>
+</body>
+</html>

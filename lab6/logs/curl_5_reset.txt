@@ -1,0 +1,32 @@
+$ curl -i -H "Cookie: visitor=old; level=expert" http://localhost:8086/reset.shtml
+HTTP/1.1 200 OK
+Date: Tue, 10 Nov 2026 16:11:59 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Set-Cookie: visitor=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/
+Set-Cookie: level=; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Path=/
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- Задание 3. Те же cookie с просроченной датой — браузер удалит их -->
+<META HTTP-EQUIV="Set-Cookie" CONTENT="visitor=; EXPIRES=Thu, 01-Jan-1970 00:00:00 GMT; PATH=/">
+<META HTTP-EQUIV="Set-Cookie" CONTENT="level=; EXPIRES=Thu, 01-Jan-1970 00:00:00 GMT; PATH=/">
+<title>ЛР 6 · Cookies обнулены</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+  <h1>Cookies обнулены</h1>
+  <!-- #echo var="HTTP_COOKIE": cookie, присланные ДО сброса (в этом запросе они ещё есть) -->
+  <p>Cookie, пришедшие в этом запросе (до сброса): <code>visitor=old; level=expert</code></p>
+  <p>В ответ отправлены cookie <code>visitor</code> и <code>level</code> с датой истечения
+     01.01.1970 — браузер их удалил.</p>
+  <p><a href="index.shtml">Проверить главную страницу</a></p>
+</div>
+</body>
+</html>

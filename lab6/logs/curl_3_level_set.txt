@@ -1,0 +1,45 @@
+$ curl -i "http://localhost:8086/level.shtml?level=expert"
+HTTP/1.1 200 OK
+Date: Tue, 10 Nov 2026 16:11:59 GMT
+Server: Apache/2.4.58 (Ubuntu)
+Set-Cookie: level=expert; Max-Age=31536000; Path=/
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- #if: META-тег для установки cookie выводится, только если пришла строка запроса level=... -->
+
+<!-- #echo var="QUERY_STRING": вставляет переменную и её значение (level=...) в тег META -->
+<META HTTP-EQUIV="Set-Cookie" CONTENT="level=expert; EXPIRES=Fri, 31-Dec-2027 23:59:59 GMT; PATH=/">
+
+<title>ЛР 6 · Задание 2 · Кто зашёл</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+  <h1>Кто зашёл на сайт</h1>
+
+  
+    <!-- данные формы: показываем, какое значение пришло методом GET -->
+    <p>Из формы получено: <code>level=expert</code> — cookie установлен.</p>
+  
+
+  <!-- Обработка присланных браузером cookie директивой #if / #elif / #else -->
+  
+    <!-- #else: cookie level ещё не пришёл от браузера -->
+    <h2 class="warn">Cookie level от браузера пока не получен</h2>
+    <p>Он будет отправлен со следующим запросом — нажмите «Проверить cookie».</p>
+  
+
+  <!-- #echo: все cookie текущего запроса -->
+  <p>Cookie в запросе: <code>(none)</code></p>
+  <p><a href="level.shtml">Проверить cookie</a> · <a href="register.html">Сменить уровень</a> ·
+     <a href="index.shtml">На главную</a> · <a href="reset.html">Обнулить cookies</a></p>
+</div>
+</body>
+</html>

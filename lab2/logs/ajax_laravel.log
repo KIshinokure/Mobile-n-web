@@ -1,0 +1,11 @@
+> POST http://127.0.0.1:8082/news/3/like
+< 200 application/json
+< Set-Cookie: XSRF-TOKEN=eyJpdiI6ImRreTl5blFyMnZPbTh0WTVnS0RnWmc9PSIsInZhbHVlIjoib3hnUGg4dThnN2xVUmIrS1JSSHJSMzlJRXdwMC9odlRpUGRDLzhaRUZnNExYVXcwaU84dTlTbDJiM2NHN0ZUK3JDcVo3VmtGb2hEMUZPdGEwNlZvbCt0cVVwWVRZVTRCbTcrdGdmdnFoaC9MMHVPSEV2NU5YeDd4MERhY0FqWk4iLCJtYWMiOiIzMWNiNmY5MDMxZGMzOWE1ZWY1ZTZlNmNlYmU0OWVjNjYwYjc5Y2JkZjA5YjQzZmNlNDVlYzU3ODE2MGZlODY5IiwidGFnIjoiIn0%3D; expires=Tue, 10 Nov 2026 18:12:11 GMT; Max-Age=7200; path=/; samesite=lax
+< Set-Cookie: news-like-session=eyJpdiI6IlY1dG45S3pjc1kyQVYwdzNIcU45eXc9PSIsInZhbHVlIjoidWZ3MEhoWUl3L1UybnhDNks5OFBLNkl6RElKTHA0bTVSTFpEeUxyc2pRdTRjNXRIV290ay9qY1RPNzVQUWMrekRRZHRqVWtsbnhVNHJWR2dWN2Q0YThtci9GdWpXcmtUd3NvaTVLMjZHand3U0pyUWxkbkJLQVdlcXE2Vm12Z3EiLCJtYWMiOiJiNzBhNzZkYzg2MGIzMDBiYmFiZjZmYzRhYWEwODhhODYwYjIxMTAxMzc4YTdhZGJhYmE5NTg4Nzg5MWFjYTcxIiwidGFnIjoiIn0%3D; expires=Tue, 10 Nov 2026 18:12:11 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+< {"ok":true,"news_id":3,"likes":1,"liked":true}
+
+> GET http://127.0.0.1:8082/news/1/likes
+< 200 application/json
+< Set-Cookie: XSRF-TOKEN=eyJpdiI6ImFia3dhRlkwSFFWUnBpU1hGZGlpY2c9PSIsInZhbHVlIjoidURkc3BDY1BzbEJPOUk5N0EwUUNJS1BvdWYzcFNFTlZJcElnNUQ1ZnM1NHNCR0J0QTM3bWZaczVHNjdzNk1jRzN3S0xwNUtWTUxXRm1lSlFZcm5TN05RemFNcDhXZll6WFNPTUNoQzJ5WUNha2tWWDNmWVdBOXJCMk5YU3QwTzciLCJtYWMiOiI3OWQyZTA2NjBiZDdiYjNmMWM3YmVjNzA1MjQwNzIwOTJlYjUzNDgxYzU4YWU2MGVlNDkxOGU5MWYxOGYwNDYzIiwidGFnIjoiIn0%3D; expires=Tue, 10 Nov 2026 18:12:12 GMT; Max-Age=7200; path=/; samesite=lax
+< Set-Cookie: news-like-session=eyJpdiI6InlzU1I1MHVYcHhyaUp6VmQyZTlEN2c9PSIsInZhbHVlIjoiNldLb3JoSHRVYWZUUlgrWW1SbzRteEI2dzIxZyt2TzJZWVhBR1FaVzNIRzlIMXJ1WWZtYTJmWS80cGh3d2graEswUmpQRGtjYmZSaEtqR2VLYS83d0ZoZlE2QTJqS0lhZXY2dnJ6L1VBdWhuWmxHRWtDdTB4S09zUnp5UGJMbXEiLCJtYWMiOiJlMjk3MTY4ZDk4ZThiNmZjYjFjZGE5ZGZkMjkzYjBkYzE5NGZhM2U5YzliYTY2NGI1NmQ2YjExNTljNDkxZTQwIiwidGFnIjoiIn0%3D; expires=Tue, 10 Nov 2026 18:12:12 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+< {"ok":true,"news_id":1,"likes":0,"liked":false}

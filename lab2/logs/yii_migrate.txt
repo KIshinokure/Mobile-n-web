@@ -1,0 +1,19 @@
+$ php yii migrate/fresh --interactive=0
+Yii Migration Tool (based on Yii v2.0.55)
+
+Creating migration history table "migration"...Done.
+Total 1 new migration to be applied:
+	m261030_000001_create_news_tables
+
+*** applying m261030_000001_create_news_tables
+    > create table {{%news}} ... done (time: 0.019s)
+    > create table {{%news_likes}} ... done (time: 0.019s)
+    > add primary key pk_news_likes on {{%news_likes}} (news_id,visitor_id) ... done (time: 0.062s)
+    > add foreign key fk_news_likes_news: {{%news_likes}} (news_id) references {{%news}} (id) ... done (time: 0.045s)
+    > insert into {{%news}} ... done (time: 0.006s)
+*** applied m261030_000001_create_news_tables (time: 0.160s)
+
+
+1 migration was applied.
+
+Migrated up successfully.
