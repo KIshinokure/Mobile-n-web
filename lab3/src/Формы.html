@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Формы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Формы</h1>
+    <a href="Главная.html">← на главную</a>
+</header>
+<main>
+
+<!-- ===== Анкета 1. Регистрация (пример из методички) ===== -->
+<form action="Ответ.html" method="GET" name="signup">
+    <fieldset>
+        <legend>Регистрация</legend>
+        <p>
+            <label>Обращение</label>
+            <label><input type="radio" name="title" value="Г-н"> Г-н</label>
+            <label><input type="radio" name="title" value="Г-жа"> Г-жа</label>
+        </p>
+        <p><label>Имя <input type="text" name="first_name" required></label></p>
+        <p><label>Фамилия <input type="text" name="last_name" required></label></p>
+        <p><label>Email <input type="email" name="email" required></label></p>
+        <p><label>Телефон <input type="tel" name="phone" pattern="[0-9+()\- ]{6,}"></label></p>
+        <p><label>Пароль <input type="password" name="password" minlength="6" required></label></p>
+        <p><label>Подтвердите пароль <input type="password" name="password_confirm" minlength="6" required></label></p>
+        <p>
+            <label>Страна
+                <select name="country">
+                    <option>Канада</option><option>Франция</option><option>Германия</option>
+                    <option>Италия</option><option>Япония</option><option selected>Россия</option>
+                    <option>Великобритания</option><option>США</option>
+                </select>
+            </label>
+        </p>
+        <p><label><input type="checkbox" name="terms" value="yes" required>
+            Я согласен с <a href="#">условиями использования</a></label></p>
+        <p><button type="submit">Зарегистрироваться</button></p>
+    </fieldset>
+</form>
+
+<!-- ===== Анкета 2. Анкета читателя ===== -->
+<form action="Ответ.html" method="GET" name="reader">
+    <fieldset>
+        <legend>Анкета читателя</legend>
+        <label class="q">Введите регистрационное имя: <input type="text" name="login" size="12"></label>
+        <label class="q">Введите пароль: <input type="password" name="pass" size="8"></label>
+
+        <span class="q">Ваш возраст:</span>
+        <div class="indent">
+            <div class="row"><label><input type="radio" name="age" value="меньше 20"> меньше 20</label></div>
+            <div class="row"><label><input type="radio" name="age" value="от 20 до 30"> от 20 до 30</label></div>
+            <div class="row"><label><input type="radio" name="age" value="старше 30"> старше 30</label></div>
+        </div>
+
+        <span class="q">Книги каких жанров Вы предпочитаете?</span>
+        <select name="genre" size="3" multiple>
+            <option selected>Детективы</option>
+            <option>Фантастика</option>
+            <option>Поэзия</option>
+        </select>
+
+        <span class="q">Как Вы узнаете о новых книгах?</span>
+        <div class="indent">
+            <div class="row"><label><input type="checkbox" name="source" value="от преподавателей" checked> от преподавателей</label></div>
+            <div class="row"><label><input type="checkbox" name="source" value="от друзей и знакомых"> от друзей и знакомых</label></div>
+            <div class="row"><label><input type="checkbox" name="source" value="в магазине"> в магазине</label></div>
+            <div class="row"><label><input type="checkbox" name="source" value="на книжных ярмарках"> на книжных ярмарках</label></div>
+            <div class="row"><label><input type="checkbox" name="source" value="через Интернет"> через Интернет</label></div>
+        </div>
+        <p><input type="submit" value="Отправить"> <input type="reset" value="Сброс"></p>
+    </fieldset>
+</form>
+
+<!-- ===== Анкета 3. Анкета для студентов ===== -->
+<form action="Ответ.html" method="GET" name="student">
+    <fieldset>
+        <legend>Анкета для студентов</legend>
+        <label class="q">Ваше имя: <input type="text" name="name" size="30"></label>
+
+        <span class="q">Ваш пол:</span>
+        <div class="indent">
+            <div class="row"><label><input type="radio" name="sex" value="Мужской"> Мужской</label></div>
+            <div class="row"><label><input type="radio" name="sex" value="Женский"> Женский</label></div>
+        </div>
+
+        <label class="q">На каком курсе Вы учитесь?
+            <select name="course">
+                <option>Первый</option><option>Второй</option><option>Третий</option>
+                <option>Четвёртый</option><option>Пятый</option>
+            </select>
+        </label>
+
+        <span class="q">Какие языки программирования Вы знаете?</span>
+        <div class="indent">
+            <div class="row"><label><input type="checkbox" name="lang" value="Паскаль" checked> Паскаль</label></div>
+            <div class="row"><label><input type="checkbox" name="lang" value="Си"> Си</label></div>
+            <div class="row"><label><input type="checkbox" name="lang" value="Пролог"> Пролог</label></div>
+        </div>
+
+        <label class="q" for="about">Напишите несколько слов о себе:</label>
+        <textarea id="about" name="about" rows="5" cols="40"></textarea>
+        <p><input type="submit" value="Отправить данные"> <input type="reset" value="Очистить форму"></p>
+    </fieldset>
+</form>
+
+<!-- ===== Анкета 4. Бланк заказа товара ===== -->
+<form action="Ответ.html" method="GET" name="order">
+    <fieldset>
+        <legend>Бланк заказа товара</legend>
+        <label class="q">Номер Вашего банковского счета: <input type="text" name="account" size="30"
+               inputmode="numeric" pattern="[0-9 ]{10,24}" placeholder="только цифры"></label>
+        <label class="q">Ваш пароль: <input type="password" name="pin" size="8"></label>
+
+        <span class="q">Метод оплаты:</span>
+        <div class="indent">
+            <div class="row"><label><input type="radio" name="pay" value="Наличный расчет"> Наличный расчет</label></div>
+            <div class="row"><label><input type="radio" name="pay" value="Безналичный расчет"> Безналичный расчет</label></div>
+        </div>
+
+        <label class="q">Список выбора товаров:
+            <select name="goods">
+                <option>книга "Программирование на языке Pascal"</option>
+                <option>книга "1С программирование"</option>
+            </select>
+        </label>
+
+        <span class="q">Какую дополнительную информацию Вы хотите получить:</span>
+        <div class="indent">
+            <div class="row"><label><input type="checkbox" name="extra" value="Остаток счета" checked> Остаток счета</label></div>
+            <div class="row"><label><input type="checkbox" name="extra" value="Список последних платежей"> Список последних платежей</label></div>
+        </div>
+        <p><input type="submit" value="Отправить данные"> <input type="reset" value="Очистить форму"></p>
+    </fieldset>
+</form>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: "Segoe UI", "DejaVu Sans", Arial, sans-serif;
+    background: #f3f4f7;
+    color: #1d2330;
+}
+.top {
+    background: #233a6b;
+    color: #fff;
+    padding: 24px 32px;
+}
+.top h1 { margin: 0 0 4px; font-size: 26px; }
+.top p  { margin: 0; opacity: .8; }
+.feed {
+    max-width: 760px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: grid;
+    gap: 16px;
+}
+.news {
+    background: #fff;
+    border-radius: 10px;
+    padding: 18px 22px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+}
+.news h2 { margin: 0 0 4px; font-size: 19px; }
+.meta { color: #6b7385; font-size: 13px; margin-bottom: 8px; }
+.like-bar { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+.like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #c9cfdb;
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 14px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.like-btn .heart { color: #9aa3b5; font-size: 16px; }
+.like-btn.liked { background: #ffe9ee; border-color: #f06b8a; color: #b8193f; }
+.like-btn.liked .heart { color: #e0244f; }
+.count { font-weight: 600; font-size: 16px; min-width: 2ch; }
+.toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #1d2330;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+}

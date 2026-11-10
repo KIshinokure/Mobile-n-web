@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- #if: META-тег для установки cookie выводится, только если пришла строка запроса level=... -->
+<!--#if expr="$QUERY_STRING = /level=/" -->
+<!-- #echo var="QUERY_STRING": вставляет переменную и её значение (level=...) в тег META -->
+<META HTTP-EQUIV="Set-Cookie" CONTENT="<!--#echo var="QUERY_STRING" -->; EXPIRES=Fri, 31-Dec-2027 23:59:59 GMT; PATH=/">
+<!--#endif -->
+<title>ЛР 6 · Задание 2 · Кто зашёл</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+  <h1>Кто зашёл на сайт</h1>
+
+  <!--#if expr="$QUERY_STRING = /level=/" -->
+    <!-- данные формы: показываем, какое значение пришло методом GET -->
+    <p>Из формы получено: <code><!--#echo var="QUERY_STRING" --></code> — cookie установлен.</p>
+  <!--#endif -->
+
+  <!-- Обработка присланных браузером cookie директивой #if / #elif / #else -->
+  <!--#if expr="$HTTP_COOKIE = /level=novice/" -->
+    <!-- #if: в cookie записан уровень novice -->
+    <h2 class="ok">На сайт зашёл новичок</h2>
+  <!--#elif expr="$HTTP_COOKIE = /level=middle/" -->
+    <!-- #elif: проверка следующего условия, если предыдущее ложно -->
+    <h2 class="ok">На сайт зашёл средний пользователь</h2>
+  <!--#elif expr="$HTTP_COOKIE = /level=expert/" -->
+    <h2 class="ok">На сайт зашёл опытный пользователь</h2>
+  <!--#else -->
+    <!-- #else: cookie level ещё не пришёл от браузера -->
+    <h2 class="warn">Cookie level от браузера пока не получен</h2>
+    <p>Он будет отправлен со следующим запросом — нажмите «Проверить cookie».</p>
+  <!--#endif -->
+
+  <!-- #echo: все cookie текущего запроса -->
+  <p>Cookie в запросе: <code><!--#echo var="HTTP_COOKIE" --></code></p>
+  <p><a href="level.shtml">Проверить cookie</a> · <a href="register.html">Сменить уровень</a> ·
+     <a href="index.shtml">На главную</a> · <a href="reset.html">Обнулить cookies</a></p>
+</div>
+</body>
+</html>

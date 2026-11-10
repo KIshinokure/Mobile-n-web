@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- Задание 1. При первом открывании страница посылает клиенту cookie visitor=old -->
+<META HTTP-EQUIV="Set-Cookie" CONTENT="visitor=old; EXPIRES=Fri, 31-Dec-2027 23:59:59 GMT; PATH=/">
+<title>ЛР 6 · Задание 1</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- #set: создаёт SSI-переменную STUDENT с ФИО студента -->
+<!--#set var="STUDENT" value="Дикарев Артемий" -->
+<!-- #config timefmt: задаёт формат вывода дат для директивы echo -->
+<!--#config timefmt="%d.%m.%Y %H:%M:%S" -->
+
+<div class="card">
+  <h1>Сайт студента <!--#echo var="STUDENT" --></h1>
+  <!-- #echo var="DATE_LOCAL": выводит текущие дату и время сервера -->
+  <p class="muted">Время сервера: <!--#echo var="DATE_LOCAL" --></p>
+
+  <!-- #if: проверяет, пришёл ли от браузера cookie visitor=old (переменная HTTP_COOKIE) -->
+  <!--#if expr="$HTTP_COOKIE = /visitor=old/" -->
+    <!-- ветка выполняется, если cookie найден: посетитель уже был на сайте -->
+    <h2 class="ok">Вы снова зашли на сайт студента «<!--#echo var="STUDENT" -->»</h2>
+  <!--#else -->
+    <!-- #else: ветка для случая, когда cookie нет — первый визит -->
+    <h2 class="warn">Я вас не знаю</h2>
+    <p>Cookie только что отправлен браузеру. Обновите страницу (F5).</p>
+  <!--#endif -->
+  <!-- #endif: конец условного блока -->
+
+  <!-- #echo var="HTTP_COOKIE": показывает все cookie, которые браузер прислал серверу -->
+  <p>Cookie в запросе: <code><!--#echo var="HTTP_COOKIE" --></code></p>
+</div>
+
+<div class="card">
+  <a href="register.html">Задание 2 — регистрация уровня пользователя</a> ·
+  <a href="reset.html">Задание 3 — обнулить cookies</a>
+</div>
+</body>
+</html>

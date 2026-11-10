@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>ЛР 6 · Задание 2 · Регистрация</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+  <h1>Регистрация</h1>
+  <!-- Данные отправляются на вторую страницу методом GET: level.shtml?level=... -->
+  <form action="level.shtml" method="GET">
+    <p>Зарегистрировать себя как:</p>
+    <label><input type="radio" name="level" value="novice" checked> новичок</label><br>
+    <label><input type="radio" name="level" value="middle"> средний пользователь</label><br>
+    <label><input type="radio" name="level" value="expert"> опытный пользователь</label><br>
+    <p><input type="submit" value="Зарегистрироваться"></p>
+  </form>
+  <p><a href="index.shtml">← на главную</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+    font-family: "Times New Roman", "DejaVu Serif", serif;
+    margin: 0;
+    background: #fafafa;
+    color: #222;
+}
+header {
+    background: #2f4f7f;
+    color: #fff;
+    padding: 18px 32px;
+}
+header h1 { margin: 0; font-size: 26px; }
+header a { color: #cfe0ff; }
+main { padding: 20px 32px; max-width: 1000px; }
+nav.toc a { font-size: 18px; }
+fieldset {
+    border: 1px solid #b8c4d6;
+    background: #fff;
+    margin-bottom: 24px;
+    padding: 14px 20px;
+}
+legend { font-weight: bold; font-size: 18px; padding: 0 6px; }
+.q { font-weight: bold; font-style: italic; margin: 12px 0 4px; display: block; }
+.row { margin: 6px 0; }
+.indent { margin-left: 24px; }
+table.grid { border-collapse: collapse; }
+table.grid th, table.grid td { border: 1px solid #777; padding: 6px 12px; }
+table.grid th { background: #dde6f3; }
+/* Подсветка полей, не прошедших HTML5-проверку после попытки отправки */
+input:user-invalid, select:user-invalid, textarea:user-invalid {
+    border: 2px solid #d33;
+    background: #fff0f0;
+}

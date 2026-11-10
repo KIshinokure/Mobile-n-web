@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<!-- Задание 3. Те же cookie с просроченной датой — браузер удалит их -->
+<META HTTP-EQUIV="Set-Cookie" CONTENT="visitor=; EXPIRES=Thu, 01-Jan-1970 00:00:00 GMT; PATH=/">
+<META HTTP-EQUIV="Set-Cookie" CONTENT="level=; EXPIRES=Thu, 01-Jan-1970 00:00:00 GMT; PATH=/">
+<title>ЛР 6 · Cookies обнулены</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+  <h1>Cookies обнулены</h1>
+  <!-- #echo var="HTTP_COOKIE": cookie, присланные ДО сброса (в этом запросе они ещё есть) -->
+  <p>Cookie, пришедшие в этом запросе (до сброса): <code><!--#echo var="HTTP_COOKIE" --></code></p>
+  <p>В ответ отправлены cookie <code>visitor</code> и <code>level</code> с датой истечения
+     01.01.1970 — браузер их удалил.</p>
+  <p><a href="index.shtml">Проверить главную страницу</a></p>
+</div>
+</body>
+</html>

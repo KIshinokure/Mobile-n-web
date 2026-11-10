@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="170" viewBox="0 0 240 170">
+  <rect x="1" y="1" width="238" height="168" rx="10" fill="#eef3fb" stroke="#2f4f7f" stroke-width="2"/>
+  <text x="20" y="32" font-family="DejaVu Sans, Arial" font-size="15" fill="#2f4f7f">&lt;form&gt;</text>
+  <rect x="20" y="46" width="200" height="22" fill="#fff" stroke="#8aa0c0"/>
+  <rect x="20" y="78" width="200" height="22" fill="#fff" stroke="#8aa0c0"/>
+  <circle cx="30" cy="118" r="7" fill="#fff" stroke="#8aa0c0"/>
+  <rect x="46" y="111" width="14" height="14" fill="#fff" stroke="#8aa0c0"/>
+  <rect x="140" y="132" width="80" height="26" rx="4" fill="#2f4f7f"/>
+  <text x="152" y="150" font-family="DejaVu Sans, Arial" font-size="12" fill="#fff">Отправить</text>
+</svg>

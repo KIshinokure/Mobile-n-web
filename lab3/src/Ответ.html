@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Данные формы получены</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Данные формы получены</h1>
+    <a href="Формы.html">← вернуться к формам</a>
+</header>
+<main>
+    <p>Форма отправлена методом GET, поэтому все значения пришли в строке запроса:</p>
+    <p><code id="qs"></code></p>
+    <table class="grid" id="result">
+        <tr><th>Имя поля (name)</th><th>Значение (value)</th></tr>
+    </table>
+    <!-- Тестирование формы: разбираем строку запроса и выводим пары имя=значение -->
+    <script>
+        const params = new URLSearchParams(location.search);
+        document.getElementById('qs').textContent = decodeURIComponent(location.search.replace(/\+/g, ' '));
+        const table = document.getElementById('result');
+        for (const [name, value] of params) {
+            const row = table.insertRow();
+            row.insertCell().textContent = name;
+            row.insertCell().textContent = name.includes('pass') || name === 'pin' ? '••••••' : value;
+        }
+    </script>
+</main>
+</body>
+</html>

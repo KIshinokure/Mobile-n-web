@@ -1,0 +1,7 @@
+body { font-family: "Segoe UI", "DejaVu Sans", Arial, sans-serif; background: #f4f2ee; margin: 0; padding: 24px; color: #222; }
+.card { background: #fff; max-width: 760px; margin: 0 auto 16px; padding: 18px 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+h1 { margin-top: 0; font-size: 24px; }
+.ok { color: #1d7a35; }
+.warn { color: #b35c00; }
+.muted { color: #777; font-size: 13px; }
+code { background: #f0eee8; padding: 2px 6px; border-radius: 4px; }
