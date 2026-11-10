@@ -1,0 +1,94 @@
+10-Nov-2026 18:11:25.020 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Nov-2026 18:11:25.020 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Nov-2026 18:11:25.021 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@3b220bcb')
+10-Nov-2026 18:11:25.131 INFO [main] org.apache.catalina.core.ApplicationContext.log Context Initialized with parameter: bsac@gmail.com
+10-Nov-2026 18:11:25.206 INFO [http-nio-8087-exec-1] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=null, Request Counter =0
+10-Nov-2026 18:11:53.098 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Nov-2026 18:11:53.099 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Nov-2026 18:23:11.730 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Nov-2026 18:23:11.730 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Nov-2026 18:23:11.731 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@58ebfd03')
+10-Nov-2026 18:23:11.833 INFO [main] org.apache.catalina.core.ApplicationContext.log Context Initialized with parameter: bsac@gmail.com
+10-Nov-2026 18:23:11.903 INFO [http-nio-8087-exec-1] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=null, Request Counter =0
+10-Nov-2026 18:27:24.943 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+10-Nov-2026 18:27:24.943 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+10-Nov-2026 19:05:56.366 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+10-Nov-2026 19:05:56.366 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+10-Nov-2026 19:05:56.367 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5b43fbf6')
+10-Nov-2026 19:05:56.481 INFO [main] org.apache.catalina.core.ApplicationContext.log Context Initialized with parameter: bsac@gmail.com
+10-Nov-2026 19:05:56.551 INFO [http-nio-8087-exec-1] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=null, Request Counter =0
+10-Nov-2026 19:07:06.437 INFO [http-nio-8087-exec-2] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=null, Request Counter =0
+10-Nov-2026 19:07:06.535 INFO [http-nio-8087-exec-5] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:06.688 INFO [http-nio-8087-exec-6] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:06.692 INFO [http-nio-8087-exec-7] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/error-login.jsp
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:06.818 INFO [http-nio-8087-exec-8] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:06.904 INFO [http-nio-8087-exec-9] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:06.907 INFO [http-nio-8087-exec-10] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/error-login.jsp
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:06.991 INFO [http-nio-8087-exec-1] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:07.070 INFO [http-nio-8087-exec-2] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:07.188 INFO [http-nio-8087-exec-3] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:07.268 INFO [http-nio-8087-exec-4] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=03F66C37934189BEEFD3AE73AFB76FCE, Request Counter =0
+10-Nov-2026 19:07:07.403 INFO [http-nio-8087-exec-6] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=null, Request Counter =0
+10-Nov-2026 19:07:07.553 INFO [http-nio-8087-exec-9] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=1300AF54A9B654B99BA2CF182991241A, Request Counter =0
+10-Nov-2026 19:07:07.556 INFO [http-nio-8087-exec-10] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:10.638 INFO [http-nio-8087-exec-1] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:10.757 INFO [http-nio-8087-exec-2] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/operators
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:11.081 INFO [http-nio-8087-exec-3] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/operators
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:11.321 INFO [http-nio-8087-exec-4] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/operators
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:11.342 INFO [http-nio-8087-exec-5] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/operators
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:11.477 INFO [http-nio-8087-exec-6] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/sessionservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:11.526 INFO [http-nio-8087-exec-7] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/sessionservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =1
+10-Nov-2026 19:07:11.543 INFO [http-nio-8087-exec-8] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/sessionservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =2
+10-Nov-2026 19:07:11.605 INFO [http-nio-8087-exec-9] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/timeoutservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:11.705 INFO [http-nio-8087-exec-10] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/timeoutservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:23.771 INFO [http-nio-8087-exec-1] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/timeoutservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:23.832 INFO [http-nio-8087-exec-3] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/timeoutservlet
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:23.885 INFO [http-nio-8087-exec-4] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/cookiecontroller
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:23.932 INFO [http-nio-8087-exec-5] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/cookiecontroller
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:24.019 INFO [http-nio-8087-exec-6] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/sessionattr.jsp
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:24.022 INFO [http-nio-8087-exec-7] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:24.108 INFO [http-nio-8087-exec-8] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:24.223 INFO [http-nio-8087-exec-9] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =3
+10-Nov-2026 19:07:24.226 INFO [http-nio-8087-exec-10] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=294D4DD9630201B113F9E35016FEBEBB, Request Counter =0
+10-Nov-2026 19:07:24.356 INFO [http-nio-8087-exec-2] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=null, Request Counter =0
+10-Nov-2026 19:07:24.486 INFO [http-nio-8087-exec-5] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/login
+Request Initialized with ID=B55B97258C52963AA549460055193267, Request Counter =0
+10-Nov-2026 19:07:24.490 INFO [http-nio-8087-exec-6] org.apache.catalina.core.ApplicationContext.log Request Initialized for /lab7/home.jsp
+Request Initialized with ID=B122FCA4DA775F66FFDECEF808B56C42, Request Counter =0

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "JSESSIONID",
+    "value": "294D4DD9630201B113F9E35016FEBEBB",
+    "domain": "127.0.0.1",
+    "path": "/lab7",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "op_file",
+    "value": "factorial_c.txt",
+    "domain": "127.0.0.1",
+    "path": "/lab7",
+    "expires": 1794413231.345276,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "op_total",
+    "value": "12",
+    "domain": "127.0.0.1",
+    "path": "/lab7",
+    "expires": 1794413231.345493,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  },
+  {
+    "name": "op_list",
+    "value": "if%3A3+for%3A1+while%3A1+return%3A6+goto%3A1",
+    "domain": "127.0.0.1",
+    "path": "/lab7",
+    "expires": 1794413231.345593,
+    "httpOnly": true,
+    "secure": false,
+    "sameSite": "Lax"
+  }
+]
