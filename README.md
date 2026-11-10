@@ -6,7 +6,7 @@
 |---|---|---|
 | [lab2](lab2) | Работа с базой данных и серверной частью: новости со счётчиком «Like» (PHP + MySQL + AJAX), маршруты Laravel и Yii2 | в работе |
 | [lab3](lab3) | Разработка и тестирование веб-форм | [Отчет_ЛР3.docx](lab3/Отчет_ЛР3.docx) |
-| [lab4](lab4) | Интерфейс СУБД MySQL, привилегии, утилиты mysqladmin / mysqlshow / mysqldump | в работе |
+| [lab4](lab4) | Интерфейс СУБД MySQL, привилегии, утилиты mysqladmin / mysqlshow / mysqldump | [Отчет_ЛР4.docx](lab4/Отчет_ЛР4.docx) |
 | [lab5](lab5) | Элементы работы с формами (Java Swing, NetBeans) | [Отчет_ЛР5.docx](lab5/Отчет_ЛР5.docx) |
 | [lab6](lab6) | Использование Cookies (Apache SSI) | в работе |
 | [lab7](lab7) | Сессии, события и фильтры (JSP / Servlet, Tomcat) | в работе |

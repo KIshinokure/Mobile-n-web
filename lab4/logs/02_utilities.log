@@ -1,0 +1,284 @@
+===== mysqladmin =====
+$ mysqladmin -u root version
+mysqladmin  Ver 10.0 Distrib 10.11.14-MariaDB, for debian-linux-gnu on x86_64
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Server version		10.11.14-MariaDB-0ubuntu0.24.04.1
+Protocol version	10
+Connection		Localhost via UNIX socket
+UNIX socket		/run/mysqld/mysqld.sock
+Uptime:			16 sec
+
+Threads: 1  Questions: 89  Slow queries: 0  Opens: 34  Open tables: 27  Queries per second avg: 5.562
+
+$ mysqladmin -u root status
+Uptime: 16  Threads: 1  Questions: 90  Slow queries: 0  Opens: 34  Open tables: 27  Queries per second avg: 5.625
+
+$ mysqladmin -u root reload
+
+$ mysqladmin -u root processlist
++----+------+-----------+----+---------+------+----------+------------------+----------+
+| Id | User | Host      | db | Command | Time | State    | Info             | Progress |
++----+------+-----------+----+---------+------+----------+------------------+----------+
+| 36 | root | localhost |    | Query   | 0    | starting | show processlist | 0.000    |
++----+------+-----------+----+---------+------+----------+------------------+----------+
+
+$ mysqladmin -u root create test_lab4
+
+$ mysqladmin -u root -f drop test_lab4
+Database "test_lab4" dropped
+
+===== вход под новыми пользователями =====
+$ mysql -u student5 -pStud5_pass -e 'SELECT CURRENT_USER(); SHOW DATABASES;'
+CURRENT_USER()
+student5@localhost
+Database
+information_schema
+library
+mysql
+performance_schema
+sys
+
+$ mysql -u mary -pMary_pass1 -e 'SELECT CURRENT_USER(); SHOW DATABASES; SELECT * FROM library.books;'
+CURRENT_USER()
+mary@localhost
+Database
+information_schema
+library
+id	title	author	year
+1	Изучаем SQL	Алан Бьюли	2021
+2	MySQL. Оптимизация производительности	Бэрон Шварц	2018
+3	PHP и MySQL. Разработка веб-приложений	Дмитрий Котеров	2023
+
+$ mysql -u mary -pMary_pass1 -e 'DELETE FROM library.books WHERE id = 1;'
+--------------
+DELETE FROM library.books WHERE id = 1
+--------------
+
+ERROR 1142 (42000) at line 1: DELETE command denied to user 'mary'@'localhost' for table `library`.`books`
+
+$ mysqladmin -u student5 -pStud5_pass password 'Stud5_new'
+
+$ mysql -u student5 -pStud5_new -e 'SELECT "пароль изменён через mysqladmin" AS result;'
+result
+пароль изменён через mysqladmin
+
+===== mysqlaccess =====
+$ mysqlaccess localhost mary library -U root -b
+mysqlaccess Version 2.10, 13 Sep 2019
+By RUG-AIV, by Yves Carlier (Yves.Carlier@rug.ac.be)
+Changes by Steve Harvey (sgh@vex.net)
+This software comes with ABSOLUTELY NO WARRANTY.
+
+===== mysqlshow =====
+$ mysqlshow -u root
++--------------------+
+|     Databases      |
++--------------------+
+| information_schema |
+| library            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+
+$ mysqlshow -u root mysql
+Database: mysql
++---------------------------+
+|          Tables           |
++---------------------------+
+| column_stats              |
+| columns_priv              |
+| db                        |
+| event                     |
+| func                      |
+| general_log               |
+| global_priv               |
+| gtid_slave_pos            |
+| help_category             |
+| help_keyword              |
+| help_relation             |
+| help_topic                |
+| index_stats               |
+| innodb_index_stats        |
+| innodb_table_stats        |
+| plugin                    |
+| proc                      |
+| procs_priv                |
+| proxies_priv              |
+| roles_mapping             |
+| servers                   |
+| slow_log                  |
+| table_stats               |
+| tables_priv               |
+| time_zone                 |
+| time_zone_leap_second     |
+| time_zone_name            |
+| time_zone_transition      |
+| time_zone_transition_type |
+| transaction_registry      |
+| user                      |
++---------------------------+
+
+$ mysqlshow -u root mysql db
+Database: mysql  Table: db
++-----------------------+---------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+| Field                 | Type          | Collation          | Null | Key | Default | Extra | Privileges                      | Comment |
++-----------------------+---------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+| Host                  | char(255)     | utf8mb3_bin        | NO   | PRI |         |       | select,insert,update,references |         |
+| Db                    | char(64)      | utf8mb3_bin        | NO   | PRI |         |       | select,insert,update,references |         |
+| User                  | char(128)     | utf8mb3_bin        | NO   | PRI |         |       | select,insert,update,references |         |
+| Select_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Insert_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Update_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Delete_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Drop_priv             | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Grant_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| References_priv       | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Index_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Alter_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_tmp_table_priv | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Lock_tables_priv      | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_view_priv      | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Show_view_priv        | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_routine_priv   | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Alter_routine_priv    | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Execute_priv          | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Event_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Trigger_priv          | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Delete_history_priv   | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
++-----------------------+---------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+
+$ mysqlshow -u root -k mysql db
+Database: mysql  Table: db
++-----------------------+---------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+| Field                 | Type          | Collation          | Null | Key | Default | Extra | Privileges                      | Comment |
++-----------------------+---------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
+| Host                  | char(255)     | utf8mb3_bin        | NO   | PRI |         |       | select,insert,update,references |         |
+| Db                    | char(64)      | utf8mb3_bin        | NO   | PRI |         |       | select,insert,update,references |         |
+| User                  | char(128)     | utf8mb3_bin        | NO   | PRI |         |       | select,insert,update,references |         |
+| Select_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Insert_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Update_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Delete_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_priv           | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Drop_priv             | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Grant_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| References_priv       | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Index_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Alter_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_tmp_table_priv | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Lock_tables_priv      | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_view_priv      | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Show_view_priv        | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Create_routine_priv   | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Alter_routine_priv    | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Execute_priv          | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Event_priv            | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Trigger_priv          | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
+| Delete_history_priv   | enum('N','Y') | utf8mb3_general_ci | NO   |     | N       |       | select,insert,update,references |         |
++-----------------------+---------------+--------------------+------+-----+---------+-------+---------------------------------+---------+
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Ignored |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+
+| db    | 0          | PRIMARY  | 1            | Host        | A         |             |          |        |      | BTREE      |         |               | NO      |
+| db    | 0          | PRIMARY  | 2            | Db          | A         |             |          |        |      | BTREE      |         |               | NO      |
+| db    | 0          | PRIMARY  | 3            | User        | A         | 1           |          |        |      | BTREE      |         |               | NO      |
+| db    | 1          | User     | 1            | User        | A         |             |          |        |      | BTREE      |         |               | NO      |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+
+
+$ mysqlshow -u root -k library books
+Database: library  Table: books
++--------+--------------+--------------------+------+-----+---------+----------------+---------------------------------+---------+
+| Field  | Type         | Collation          | Null | Key | Default | Extra          | Privileges                      | Comment |
++--------+--------------+--------------------+------+-----+---------+----------------+---------------------------------+---------+
+| id     | int(11)      |                    | NO   | PRI |         | auto_increment | select,insert,update,references |         |
+| title  | varchar(200) | utf8mb4_general_ci | NO   |     |         |                | select,insert,update,references |         |
+| author | varchar(100) | utf8mb4_general_ci | NO   |     |         |                | select,insert,update,references |         |
+| year   | smallint(6)  |                    | YES  |     |         |                | select,insert,update,references |         |
++--------+--------------+--------------------+------+-----+---------+----------------+---------------------------------+---------+
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Ignored |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+
+| books | 0          | PRIMARY  | 1            | id          | A         | 3           |          |        |      | BTREE      |         |               | NO      |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+---------+
+
+===== mysqldump =====
+$ mysqldump -u root --databases mysql > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-full.sql'
+
+$ mysqldump -u root mysql db > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-db.sql'
+
+$ mysqldump -u root mysql global_priv user > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-1.sql'
+
+$ mysqldump -u root -d mysql > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-schema-only.sql'
+
+$ mysqldump -u root -t mysql > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-data-only.sql'
+
+$ mysqldump -u root -c -t mysql db > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-db-complete-insert.sql'
+
+$ mysqldump -u root library > '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/library.sql'
+
+$ ls -l '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps'
+total 4888
+-rwxrwxrwx 1 doza doza    2321 Nov 10 18:11 library.sql
+-rwxrwxrwx 1 doza doza    9419 Nov 10 18:11 mysql-1.sql
+-rwxrwxrwx 1 doza doza 2451573 Nov 10 18:11 mysql-data-only.sql
+-rwxrwxrwx 1 doza doza    1889 Nov 10 18:11 mysql-db-complete-insert.sql
+-rwxrwxrwx 1 doza doza    4258 Nov 10 18:11 mysql-db.sql
+-rwxrwxrwx 1 doza doza 2485283 Nov 10 18:11 mysql-full.sql
+-rwxrwxrwx 1 doza doza   34711 Nov 10 18:11 mysql-schema-only.sql
+
+$ head -n 40 '/mnt/c/Users/doza/Documents/Mobile-n-web/lab4/dumps/mysql-db.sql'
+/*M!999999\- enable the sandbox mode */ 
+-- MariaDB dump 10.19  Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: mysql
+-- ------------------------------------------------------
+-- Server version	10.11.14-MariaDB-0ubuntu0.24.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `db`
+--
+
+DROP TABLE IF EXISTS `db`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `db` (
+  `Host` char(255) NOT NULL DEFAULT '',
+  `Db` char(64) NOT NULL DEFAULT '',
+  `User` char(128) NOT NULL DEFAULT '',
+  `Select_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Insert_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Update_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Delete_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Create_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Drop_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Grant_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `References_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Index_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Alter_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+  `Create_tmp_table_priv` enum('N','Y') CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'N',
+
+===== копирование БД: mysqldump | mysql =====
+$ mysqladmin -u root create library_copy
+
+$ mysqldump -u root library | mysql -u root library_copy
+
+$ mysql -u root -e 'SELECT * FROM library_copy.books;'
+id	title	author	year
+1	Изучаем SQL	Алан Бьюли	2021
+2	MySQL. Оптимизация производительности	Бэрон Шварц	2018
+3	PHP и MySQL. Разработка веб-приложений	Дмитрий Котеров	2023
+
